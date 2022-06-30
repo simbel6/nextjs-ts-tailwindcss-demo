@@ -9,7 +9,7 @@ type Props = {
 const Detail: NextPage<Props> = ({ data }) => {
   const router = useRouter();
   if (router.isFallback) {
-    return <div>Loading...</div>;
+    return <div className="flex justify-center align-middle">Loading...</div>;
   }
   return (
     <div className="mx-auto my-3 max-w-4xl">
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
         id: `${id}`,
       },
     })),
-    fallback: false, // false or 'blocking'
+    fallback: true, // false or 'blocking'
   };
 }
 
@@ -46,6 +46,7 @@ type ParamsType = {
 
 // 使用请求参数获取数据
 export async function getStaticProps({ params }: ParamsType) {
+  console.log('getStaticProps detail id', params.id)
   const res = await fetch(
     `http://112.126.60.46:7300/mock/62bbc1a90dc647002044a6f4/fantuan/detail?id=${params.id}`
   );
