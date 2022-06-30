@@ -1,0 +1,21 @@
+.card {
+  width: 300px;
+  height: 150px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  .title {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .price {
+    color: tomato;
+    margin: 10px 0;
+  }
+
+  .desc {
+    color: #bbb;
+  }
+}
